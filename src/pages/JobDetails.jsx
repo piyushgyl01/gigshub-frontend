@@ -26,7 +26,7 @@ export default function JobDetails() {
         { foundJob && (<>
         <h1>{foundJob?.jobTitle}</h1>
         <div className="col-md-12" key={foundJob?._id}>
-          <div class="card mb-4">
+          <div class="card mb-4 p-2">
             <div class="card-body">
               <p class="card-text">
                 <strong>Company Name: </strong>
