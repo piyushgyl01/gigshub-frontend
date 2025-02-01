@@ -104,7 +104,7 @@ export default function App() {
             </div>
           </>
         ) : (
-          <p>No Results Found</p>
+          <p>No Jobs Found</p>
         )}
       </main>
     </>
