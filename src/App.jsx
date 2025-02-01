@@ -98,7 +98,7 @@ export default function App() {
             </div>
           </div>
         )}
-        
+
         {/* DISPLAYING JOBS */}
         {filteredData?.length > 0 ? (
           <>
@@ -106,7 +106,7 @@ export default function App() {
             <div className="row">
               {filteredData?.map((job) => (
                 <div className="col-md-4" key={job._id}>
-                  <div class="card mb-4">
+                  <div class="card mb-4 p-2">
                     <div class="card-body">
                       <h3 class="card-title">{job.jobTitle}</h3>
                       <p class="card-text">
@@ -121,18 +121,22 @@ export default function App() {
                         <strong>Job Type: </strong>
                         {job.jobType}
                       </p>
-                      <Link
-                        to={`/${job.jobTitle}/${job._id}`}
-                        class="card-link btn btn-primary px-5"
-                      >
-                        See Details
-                      </Link>
-                      <button
-                        class="card-link btn btn-danger px-5"
-                        onClick={() => handleDelete(job._id)}
-                      >
-                        Delete
-                      </button>
+                      <div className="row mb-2">
+                        <Link
+                          to={`/${job.jobTitle}/${job._id}`}
+                          class="card-link btn btn-primary px-4"
+                        >
+                          See Details
+                        </Link>
+                      </div>
+                      <div className="row">
+                        <button
+                          class="card-link btn btn-danger px-4"
+                          onClick={() => handleDelete(job._id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
