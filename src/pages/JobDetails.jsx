@@ -45,7 +45,7 @@ export default function JobDetails() {
                 {foundJob?.jobDescription}
               </p>
               <p class="card-text">
-                <strong>Qualifications:: </strong>
+                <strong>Qualifications: </strong>
                 {foundJob?.jobQualifications}
               </p>
             </div>
