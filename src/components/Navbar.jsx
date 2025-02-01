@@ -31,6 +31,15 @@ export default function Navbar() {
                 <Link className="nav-link" to="/post-job">
                   Post a Job
                 </Link>
+              </li> 
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  target="_blank"
+                  href="https://build-with-piyush-r5h0xnymh-piyush-goyals-projects-72282e7a.vercel.app/"
+                >
+                  Developer
+                </a>
               </li>
             </ul>
           </div>

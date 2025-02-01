@@ -56,6 +56,7 @@ export default function PostJob() {
         setTimeout(() => {
           setMessage({ ...message, show: false });
         }, 3000);
+        // navigate("/")
       }
     } catch (error) {
       console.log("UNABLE TO POST THE DATA", error);

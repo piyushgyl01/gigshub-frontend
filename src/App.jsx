@@ -5,6 +5,11 @@ import useFetch from "./useFetch";
 export default function App() {
   //STATES
   const [searchFilter, setSearchFilter] = useState("");
+  const [message, setMessage] = useState({
+    show: false,
+    message: "",
+    type: "warning",
+  });
 
   //FETCH DATA WITH USE-FETCH
   const { data, loading, error, refetch } = useFetch(
@@ -31,9 +36,25 @@ export default function App() {
 
       if (reponse.ok) {
         await refetch();
+        setMessage({
+          show: true,
+          message: "Job Deleted.",
+          type: "success",
+        });
+        setTimeout(() => {
+          setMessage({ ...message, show: false });
+        }, 3000);
       }
     } catch (error) {
       console.log("ERROR OCCURRED WHILE DELETING THE JOB", error);
+      setMessage({
+        show: true,
+        message: "Unable to delete the job.",
+        type: "warning",
+      });
+      setTimeout(() => {
+        setMessage({ ...message, show: false });
+      }, 3000);
     }
   };
 
@@ -62,7 +83,22 @@ export default function App() {
           </div>
         )}
         {error && <p>Error occured while fetching the data...</p>}
-
+        {message.show && (
+          <div className="row">
+            <div className="col-md-12">
+              <p
+                className={
+                  message.type === "warning"
+                    ? "bg-danger-subtle p-3 rounded"
+                    : "bg-success-subtle p-3 rounded"
+                }
+              >
+                {message.message}
+              </p>
+            </div>
+          </div>
+        )}
+        
         {/* DISPLAYING JOBS */}
         {filteredData?.length > 0 ? (
           <>
